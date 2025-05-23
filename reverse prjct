@@ -1,0 +1,10 @@
+# 2- Verilen listenin içindeki elemanları tersine döndüren bir fonksiyon yazın. Eğer listenin içindeki elemanlar da liste içeriyorsa onların elemanlarını da tersine döndürün.
+
+def reverse_d(lst):
+    reversed_list = []
+    for i in reversed(lst):
+        if isinstance(i, list):
+            reversed_list.append(reverse_d(i))  # İç listeyi de terse çevir
+        else:
+            reversed_list.append(i)
+    return reversed_list
